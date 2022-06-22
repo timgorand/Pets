@@ -13,13 +13,8 @@ public class Exercises {
         {
             array[i] = i+1;
         }
-        BufferedReader reading = new BufferedReader(new InputStreamReader(System.in));
-       /* int key = Integer.parseInt(reading.readLine());
-        System.out.println("key = " + key);
-        System.out.println(recursively.Search_in_Array(array, key));*/
-        System.out.println(5^2);
-
     }
+    //Заполните массив случайным числами и выведите максимальное, минимальное и среднее значение.
     public static void first_zero()
     {
         double min=Double.MAX_VALUE;
@@ -44,7 +39,7 @@ public class Exercises {
         System.out.println(min);
         System.out.println(avg);
     }
-
+    //Реализуйте алгоритм сортировки пузырьком для сортировки массива
     public static void first_one() {
         int[] array = new int[10];
         Random r = new Random();
@@ -81,6 +76,8 @@ public class Exercises {
         }
 
     }
+    //Напишите программу, которая выводит на консоль простые числа в промежутке от [2, 100].
+    //Используйте для решения этой задачи оператор "%" (остаток от деления) и циклы.
     public static void first_two()
     {
         for(int i =2; i<=100; i++)
@@ -106,6 +103,7 @@ public class Exercises {
             }
         }
     }
+    //Дан массив целых чисел и ещё одно целое число. Удалите все вхождения этого числа из массива (пропусков быть не должно).
     public static void first_three() throws IOException {
         int del_count=0;
         int [] first_array = new int[15];

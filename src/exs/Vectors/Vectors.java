@@ -1,4 +1,4 @@
-package exs;
+package exs.Vectors;
 
 import java.util.Random;
 
