@@ -2,7 +2,7 @@ package exs;
 
 class Synhronized extends Thread {
     private Object syn;
-
+    //Напишите программу, в которой создаются два потока, которые выводят на консоль своё имя по очереди.
     public Synhronized(Object object) {
         this.syn = object;
     }
@@ -22,6 +22,7 @@ class Synhronized extends Thread {
             }
         }
     }
+    //Работает бесконечно!
     public static void main(String[] strings) {
         Object lock = new Object();
         new Synhronized(lock).start();
