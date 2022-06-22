@@ -23,7 +23,7 @@ public class Array_to_Map {
         Map<K, Integer> Maps = new LinkedHashMap<>();
         for (K i : ks) {
             if (Maps.containsKey(i)) {
-                Integer value = Maps.get(i); //Массив НЕ работает - выдаёт следующее -> [I@58372a00
+                Integer value = Maps.get(i); //Массив НЕ работает - выдаёт следующее вместо кол-ва -> [I@58372a00
                 Maps.put(i,value+1);
             }
             else Maps.put(i, 1);
