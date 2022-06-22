@@ -10,17 +10,15 @@ public class Iteration<T> implements Iterator<T> {
     private int index;
     public static void main(String[] args)
     {
-        Integer [] tester = new Integer[50];
+        Integer [] tester = new Integer[20];
         Random r = new Random();
         for (int i = 0; i<tester.length; i++){
             tester[i] = r.nextInt(1,177);
         }
         //Iteration<Iterator> Q = new Iteration<Integer>(tester);
-        String[] arrayString = new String[]{"as","as","dsd","41","12"};
-        Iteration Q2 = new Iteration(arrayString);
         Iteration Q = new Iteration(tester);
         for (int i = 0; i<tester.length; i++) {
-            System.out.println(Q.next());
+            System.out.println(Q.next()); //Выводит перебор массива
         }
     }
     Iteration(T[]array){this.array = array;}

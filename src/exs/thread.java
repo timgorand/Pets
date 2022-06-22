@@ -10,7 +10,7 @@ public class thread {
                 try {
                     synchronized (syn)
                     {
-                        System.out.println(getState());
+                        System.out.println(getState());//Старт
                         syn.notifyAll();
                         syn.wait();
                     }
@@ -19,15 +19,16 @@ public class thread {
                 }
             }
         };
-        System.out.println(thread.getState());
+        System.out.println(thread.getState());//Бежит
         synchronized (syn)
         {
             thread.start();
             syn.wait();
-            System.out.println(thread.getState());
+            System.out.println(thread.getState());//Ждёт
             syn.notifyAll();
+            System.out.println(thread.getState());//блокирован
             syn.wait(2000);
-            System.out.println(thread.getState());
+            System.out.println(thread.getState());//Уничтожен
             syn.notifyAll();
         }
     }

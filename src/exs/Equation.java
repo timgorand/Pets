@@ -14,11 +14,10 @@ $cos(x^5) + x^4 - 345.3 * x - 23 = 0$
     private static double toch=0;
     public static double solve(double start, double end)
     {
-        if ((last_end == end && last_start==start)){
+        if ((last_end == end && last_start==start)){ //Без этой проверки рекурсия не останавливается НИКОГДА в некоторых случаях
             return start;
         }
-        toch = start-end;
-        if((start-end <= 0.001 && start-end >0) || (start-end)*-1 <=0.001)
+        if((start-end <= 0.001 && start-end >0) || (start-end)*-1 <=0.001) //Защита от отрицательных згачений start-end
         {
             return start;
         }
