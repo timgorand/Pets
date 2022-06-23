@@ -18,7 +18,7 @@ public class Take_took {
     public Queue<Double> queue;
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));//Ввод с консоли
-        size = 5;
+        size = reader.read();
         LinkedList<Double>queue_list = new LinkedList<Double>();
         Thread place = new Thread(new make(queue_list, size));
         place.start();
