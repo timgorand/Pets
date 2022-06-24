@@ -1,7 +1,7 @@
 package exs;
 
 import java.util.function.Function;
-
+//Написать метод, принимающий функцию для заполнения массива.
 public class Filler {
 
     public static <T> void fill(T[]objects, Function<Integer, ? extends T> function){
