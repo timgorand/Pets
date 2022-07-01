@@ -38,7 +38,7 @@ public class SearchWiki_orkType {
                 System.out.println(connecter);//И всё работает!
             }
             else {
-                connecter =s + ":";
+                connecter =s + ":";//Если пришло название
                 two = true;
 
             }
@@ -59,31 +59,31 @@ public class SearchWiki_orkType {
             connection.setRequestMethod("GET");//Запрос подключению
             connection.setConnectTimeout(200); //Без таймаута не работает
             connection.connect();
-            if (HttpURLConnection.HTTP_OK == connection.getResponseCode()){
-                isR = new InputStreamReader(connection.getInputStream());
-                bfR = new BufferedReader(isR);
+            if (HttpURLConnection.HTTP_OK == connection.getResponseCode()){//Если всё стабильно
+                isR = new InputStreamReader(connection.getInputStream());//Забираем Json
+                bfR = new BufferedReader(isR);//Передаём Json
                 line = bfR.readLine();
             } else {
-                System.out.printf("Fail %s", connection.getResponseCode());
+                System.out.printf("Fail %s", connection.getResponseCode());//Если соединение съели
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
         finally {
             try {
-                isR.close();
+                isR.close();//Больше не нужно
             } catch (IOException e) {
                 e.printStackTrace();
             }
             try {
-                bfR.close();
+                bfR.close();//Не нуждаемся более
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         return line;
     }
-    public static void Parser(String s){//Парсерь строк
+    public static void Parser(String s){//Парсер строк
         String check = s;
         if(first){
             for (String pars : s.split(":")){//После делим по двоеточию
@@ -94,7 +94,7 @@ public class SearchWiki_orkType {
                 else if(third){//Описание
                     crafter += pars;//Из-за деления по запятой, описание может делиться, потому собираем, пока есть
                 }
-                else if(correcter.get(0).equals(pars) || correcter.get(1).equals(pars) ){
+                else if(correcter.get(0).equals(pars) || correcter.get(1).equals(pars) ){//Описание или название
                     if (correcter.get(1).equals(pars)){//Проверка на содержимое
                         third = true;
                     }else {

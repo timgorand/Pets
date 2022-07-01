@@ -17,12 +17,11 @@ import java.util.Map;
 public class SearchWiki2 {
 
     public static void main(String[] args) throws Exception {
-        String link = "https://ru.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=";
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String search = URLEncoder.encode(reader.readLine(), StandardCharsets.UTF_8);
-        link += search;
-
-        HttpRequest request = HttpRequest.newBuilder()
+        String link = "https://ru.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=";//Единичный URl
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));//Подготавливаем почву запроса
+        String search = URLEncoder.encode(reader.readLine(), StandardCharsets.UTF_8);//Экранируем ввод
+        link += search;//И соединяем
+        HttpRequest request = HttpRequest.newBuilder()//Создаём HTTPRequest
                 .uri(new URI(link))
 //                .headers("Content-Type", "text/plain;charset=UTF-8")
                 .build();
