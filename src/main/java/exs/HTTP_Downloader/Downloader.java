@@ -16,6 +16,8 @@ public class Downloader {
         if(outer.equals("")){//Но если она пуста, то отправляют в корневую папку
             outer="./";
         }
+        System.out.println("Запуск работы - ожидайте");
+        System.out.println("Скорость скачки файлов 2КБ\n Количество потоков - 3");
         String urls = "./src/main/java/exs/HTTP_Downloader/Urls.txt";//txt файл,с которого всё скачивается
         String content = readUsingFiles(urls);
         int count = 1;
